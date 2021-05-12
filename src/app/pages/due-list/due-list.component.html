@@ -1,0 +1,78 @@
+<div fxLayout="column">
+  <div
+    class="c-margin-top-10 c-padding-5"
+    fxLayoutAlign="center center"
+  >
+    <mat-card fxFlex="45" fxFlex.xs="100">
+      <div>
+        <mat-label class="c-color-gray">Please select the month</mat-label>
+      </div>
+      <div
+        fxLayout="row"
+        fxLayoutGap="20px"
+      >
+        <div fxFlex="75" fxLayoutAlign="start center">
+          <mat-form-field fxFlexFill>
+            <mat-label>Due Month</mat-label>
+            <mat-select [(value)]="selected">
+              <mat-option
+                *ngFor="let food of foods"
+                [value]="food.value"
+              >
+                {{food.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div
+          fxFlex="15"
+          fxLayoutAlign="center center"
+        >
+          <button
+            mat-stroked-button
+            color="accent"
+            (click)="getDueList(selected)"
+          >Search</button>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+
+  <mat-card *ngIf="dueList.length" class="c-margin-top-10">
+    <div
+      fxLayoutAlign="center center"
+    >
+      <div
+        fxLayout="row wrap"
+        fxLayoutGap="16px grid"
+      >
+        <div
+          fxFlex="25%"
+          fxFlex.xs="100%"
+          fxFlex.sm="33%"
+          *ngFor="let elem of dueList"
+        >
+
+          <mat-card class="mat-elevation-z4">
+            <mat-card-header>
+              <mat-card-title class="c-color-gray">{{ elem.name }}</mat-card-title>
+            </mat-card-header>
+            <mat-divider></mat-divider>
+            <mat-card-content>
+              <mat-list><span class="c-bold">Policy No. : </span>{{ elem.policyNumber }}</mat-list>
+              <mat-list><span class="c-bold">Premium : </span>{{ elem.premium }}</mat-list>
+            </mat-card-content>
+            <mat-card-actions>
+              <button
+                mat-stroked-button
+                color="accent"
+              >PAID</button>
+            </mat-card-actions>
+          </mat-card>
+
+        </div>
+      </div>
+    </div>
+  </mat-card>
+
+</div>
