@@ -10,6 +10,7 @@ export class PolicyHolder {
     this.plan = parseInt(`${obj.Plan} ${obj.term}`, 10);
     this.sumAssured = obj.SumAssured;
     this.status = obj.Status;
+    this.fup = obj.FUP;
   }
   dueMonth: Array<number>;
   id: string;
@@ -21,4 +22,5 @@ export class PolicyHolder {
   plan: number;
   sumAssured: string;
   status: string;
+  fup: string;
 }

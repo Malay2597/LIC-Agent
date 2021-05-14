@@ -22,3 +22,19 @@ margin-top: 10px;
 padding: 5px;
 }
 
+.c-margin-left-10 {
+margin-right: 10px;
+}
+
+.c-loading-shade {
+ margin: auto;
+  height: 50px;
+  width: 54px;
+  background-color: transaparent;
+  position: absolute;
+  top: 50%;
+  margin-top: -25px;
+  left: 50%;
+  margin-left: -27px;
+  z-index: 9999;
+}

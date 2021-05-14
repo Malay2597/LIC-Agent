@@ -11,8 +11,10 @@ export class DueListComponent implements OnInit {
   constructor(private licApiService: LicApiService) { }
 
   dueList: PolicyHolder[] = [];
+  loading: boolean;
+  selectedMonth;
 
-  foods = [
+  months = [
     { value: '1', viewValue: 'January' },
     { value: '2', viewValue: 'February' },
     { value: '3', viewValue: 'March' },
@@ -31,9 +33,11 @@ export class DueListComponent implements OnInit {
   }
 
   getDueList(month) {
+    this.loading = true;
     this.licApiService.getDueList(month).subscribe(res => {
       console.log(res);
       this.dueList = res;
+      this.loading = false;
     });
   }
 

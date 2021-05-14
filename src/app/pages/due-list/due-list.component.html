@@ -3,7 +3,10 @@
     class="c-margin-top-10 c-padding-5"
     fxLayoutAlign="center center"
   >
-    <mat-card fxFlex="45" fxFlex.xs="100">
+    <mat-card
+      fxFlex="45"
+      fxFlex.xs="100"
+    >
       <div>
         <mat-label class="c-color-gray">Please select the month</mat-label>
       </div>
@@ -11,37 +14,40 @@
         fxLayout="row"
         fxLayoutGap="20px"
       >
-        <div fxFlex="75" fxLayoutAlign="start center">
+        <div
+          fxFlex="75"
+          fxLayoutAlign="start center"
+        >
           <mat-form-field fxFlexFill>
             <mat-label>Due Month</mat-label>
-            <mat-select [(value)]="selected">
+            <mat-select [(value)]="selectedMonth">
               <mat-option
-                *ngFor="let food of foods"
-                [value]="food.value"
+                *ngFor="let month of months"
+                [value]="month.value"
               >
-                {{food.viewValue}}
+                {{month.viewValue}}
               </mat-option>
             </mat-select>
           </mat-form-field>
         </div>
         <div
-          fxFlex="15"
+          fxFlex="25"
           fxLayoutAlign="center center"
         >
           <button
             mat-stroked-button
             color="accent"
-            (click)="getDueList(selected)"
+            (click)="getDueList(selectedMonth)"
           >Search</button>
         </div>
       </div>
     </mat-card>
   </div>
-
-  <mat-card *ngIf="dueList.length" class="c-margin-top-10">
-    <div
-      fxLayoutAlign="center center"
-    >
+  <mat-card
+    *ngIf="!loading && dueList.length"
+    class="c-margin-top-10"
+  >
+    <div fxLayoutAlign="center center">
       <div
         fxLayout="row wrap"
         fxLayoutGap="16px grid"
@@ -65,8 +71,12 @@
             <mat-card-actions>
               <button
                 mat-stroked-button
-                color="accent"
-              >PAID</button>
+                color="warn"
+              >PENDING<mat-icon style="padding-left: 10px;">loop</mat-icon></button>
+              <button
+                mat-stroked-button
+                color="primary"
+              >PAID<mat-icon style="padding-left: 10px;">done</mat-icon></button>
             </mat-card-actions>
           </mat-card>
 
@@ -74,5 +84,10 @@
       </div>
     </div>
   </mat-card>
+  <mat-progress-spinner
+    class="c-loading-shade"
+    *ngIf="loading"
+    mode="indeterminate"
+  ></mat-progress-spinner>
 
 </div>
