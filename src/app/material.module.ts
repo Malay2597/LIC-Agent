@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 // Angular Material Components
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CdkTableModule } from '@angular/cdk/table';
 
 import { MatBottomSheetModule, MatCheckboxModule, MatDividerModule } from '@angular/material';
@@ -41,7 +40,6 @@ import { MatRippleModule } from '@angular/material/core';
 @NgModule({
   imports: [
     CommonModule,
-    BrowserAnimationsModule,
     CdkTableModule,
     MatCheckboxModule,
     MatCheckboxModule,
@@ -79,8 +77,7 @@ import { MatRippleModule } from '@angular/material/core';
     MatBottomSheetModule
   ],
   exports: [
-    BrowserAnimationsModule,
-    CdkTableModule,
+        CdkTableModule,
     MatCheckboxModule,
     MatCheckboxModule,
     MatButtonModule,

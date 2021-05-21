@@ -1,0 +1,18 @@
+<p-table [value]="policyHolder">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>DOC</th>
+            <th>Policy No</th>
+            <th>Name</th>
+            <th>Plan</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-policyHolder>
+        <tr>
+            <td>{{policyHolder.doc}}</td>
+            <td>{{policyHolder.policyNumber}}</td>
+            <td>{{policyHolder.name}}</td>
+            <td>{{policyHolder.plan}}</td>
+        </tr>
+    </ng-template>
+</p-table>

@@ -7,6 +7,7 @@ import {
 import { catchError, map } from 'rxjs/operators';
 import { Observable, throwError } from 'rxjs';
 import { PolicyHolder } from '../models/policyHolder.model';
+import { PolicyDetails } from '../models/policyDetails.model';
 
 @Injectable({
   providedIn: 'root',
@@ -21,11 +22,29 @@ export class LicApiService {
     params = params.append('pageSize', pageSize.toString());
     return this.http
       .get(`${this.apiUrl}policyHolders`, { params })
-      .pipe(map((res: object[]) => {
+      .pipe(map((res: PolicyDetails) => {
         const result: PolicyHolder[] = [];
-        res.forEach(el => {
+        res.policyHoldersInfo.forEach(el => {
           const obj = new PolicyHolder(el);
           result.push(obj);
+        });
+        return result;
+      }), catchError(this.handleError));
+  }
+
+  getPolicyListByType(type: string) {
+    let params = new HttpParams();
+    params = params.append('pageNumber', '1');
+    params = params.append('pageSize', '300');
+    return this.http
+      .get(`${this.apiUrl}policyHolders`, { params })
+      .pipe(map((res: PolicyDetails) => {
+        const result: PolicyHolder[] = [];
+        res.policyHoldersInfo.forEach(el => {
+          const obj = new PolicyHolder(el);
+          if (obj.status === "Single Premium") {
+            result.push(obj);
+          }
         });
         return result;
       }), catchError(this.handleError));
