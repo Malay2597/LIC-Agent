@@ -33,6 +33,7 @@ export class LicApiService {
   }
 
   getPolicyListByType(type: string) {
+    const policyType = this.mapPolicyTypes(type);
     let params = new HttpParams();
     params = params.append('pageNumber', '1');
     params = params.append('pageSize', '300');
@@ -42,13 +43,50 @@ export class LicApiService {
         const result: PolicyHolder[] = [];
         res.policyHoldersInfo.forEach(el => {
           const obj = new PolicyHolder(el);
-          if (obj.status === "Single Premium") {
+          if (obj.status === policyType) {
             result.push(obj);
           }
         });
         return result;
       }), catchError(this.handleError));
   }
+
+  mapPolicyTypes(type: string) {
+  let mappedValue: string;
+  switch (type) {
+    case 'InForce':
+    mappedValue = 'In Force';
+    break;
+
+    case 'Single':
+    mappedValue = 'Single Premium';
+    break;
+
+    case 'Matured':
+    mappedValue = 'Matured';
+    break;
+
+    case 'Surrendered':
+    mappedValue = 'Surrendered';
+    break;
+
+    case 'Lapsed':
+    mappedValue = 'Lapsed without Surrender Value';
+    break;
+
+    case 'Reduced':
+    mappedValue = 'Reduced Paid-up';
+    break;
+
+    case 'Death':
+    mappedValue = 'Death Claim';
+    break;
+
+    default:
+      break;
+  }
+  return mappedValue;
+}
 
   getDueList(month = 1): Observable<PolicyHolder[]> {
     let params = new HttpParams();

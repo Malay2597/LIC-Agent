@@ -8,6 +8,7 @@ import { LicApiService } from 'src/app/services/lic-api.service';
   styleUrls: ['./due-list.component.css']
 })
 export class DueListComponent implements OnInit {
+  url: string;
   constructor(private licApiService: LicApiService) { }
 
   dueList: PolicyHolder[] = [];
@@ -35,10 +36,19 @@ export class DueListComponent implements OnInit {
   getDueList(month) {
     this.loading = true;
     this.licApiService.getDueList(month).subscribe(res => {
-      console.log(res);
       this.dueList = res;
       this.loading = false;
     });
   }
 
+  onClick(value: PolicyHolder) {
+    const obj = `PolicyNo:${value.policyNumber}%0ADoc : ${value.doc}%0APrem : ${value.premium}`;
+    this.url = `https://api.whatsapp.com/send?phone=919662208847&text=${obj}`;
+    window.location.href = this.url;
+  }
+
+  onPay(value: PolicyHolder) {
+    value.premiumPaid = true;
+    console.log(value);
+}
 }

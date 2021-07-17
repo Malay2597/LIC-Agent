@@ -6,18 +6,14 @@
   </div>
   <div>
     <mat-tab-group>
-      <mat-tab label="Open"> {{ openPolicies }} </mat-tab>
-      <mat-tab >
-        <ng-template mat-tab-label>Single</ng-template>
+      <mat-tab *ngFor="let type of policyTypesArray">
+        <ng-template mat-tab-label>{{ type.label }}</ng-template>
         <ng-template matTabContent>
-         <policy-view-table [type]="Single"></policy-view-table>
+          <policy-view-table [type]="type.value"></policy-view-table>
         </ng-template>
       </mat-tab>
-      <mat-tab label="Matured"> Content 3 </mat-tab>
-      <mat-tab label="Surrendered"> Content 3 </mat-tab>
-      <mat-tab label="Lapsed"> Content 3 </mat-tab>
-      <mat-tab label="Death Claim"> Content 3 </mat-tab>
-      <mat-tab label="Reduced Paid"> Content 3 </mat-tab>
+      <mat-tab label="Matured">
+      </mat-tab>
     </mat-tab-group>
   </div>
 </div>

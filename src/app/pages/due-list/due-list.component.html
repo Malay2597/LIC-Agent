@@ -73,11 +73,19 @@
               <button
                 mat-stroked-button
                 color="warn"
+                [disabled]="elem.premiumPaid"
+                (click)=onPay(elem)
               >PENDING<mat-icon style="padding-left: 10px;">loop</mat-icon></button>
               <button
                 mat-stroked-button
                 color="primary"
+                [disabled]="!elem.premiumPaid"
               >PAID<mat-icon style="padding-left: 10px;">done</mat-icon></button>
+               <button
+              mat-icon-button
+              (click)="onClick(elem)"
+              style="font-size: 1.9rem"
+            ><i class="fa fa-whatsapp product-category-icon"></i></button>
             </mat-card-actions>
           </mat-card>
 

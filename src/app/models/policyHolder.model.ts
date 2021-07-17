@@ -11,6 +11,7 @@ export class PolicyHolder {
     this.sumAssured = obj.SumAssured;
     this.status = obj.Status;
     this.fup = obj.FUP;
+    this.premiumPaid = false;
   }
   dueMonth: Array<number>;
   id: string;
@@ -23,4 +24,5 @@ export class PolicyHolder {
   sumAssured: string;
   status: string;
   fup: string;
+  premiumPaid: boolean;
 }

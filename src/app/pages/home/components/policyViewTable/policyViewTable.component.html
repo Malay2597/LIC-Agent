@@ -1,4 +1,4 @@
-<p-table [value]="policyHolder">
+<!-- <p-table [value]="policyHolder">
     <ng-template pTemplate="header">
         <tr>
             <th>DOC</th>
@@ -15,4 +15,73 @@
             <td>{{policyHolder.plan}}</td>
         </tr>
     </ng-template>
-</p-table>
+</p-table> -->
+
+<div
+  *ngIf="!loading && policyHolder.length"
+  class="card"
+>
+  <p-dataView
+    #dv
+    [value]="policyHolder"
+    [paginator]="true"
+    [rows]="9"
+    filterBy="name"
+    [sortField]="sortField"
+    [sortOrder]="sortOrder"
+    layout="list"
+  >
+    <p-header>
+      <div class="ui-g">
+        <div class="ui-g-12 ui-md-4">
+          <input
+            type="search"
+            pInputText
+            placeholder="Search by Name"
+            (keyup)="dv.filter($event.target.value, 'contains')"
+          >
+        </div>
+        <!-- <div class="ui-g-12 ui-md-4">
+          <p-dropdown
+            [options]="sortOptions"
+            [(ngModel)]="sortKey"
+            placeholder="Sort By"
+            (onChange)="onSortChange($event)"
+            [style]="{'min-width':'15em'}"
+          ></p-dropdown>
+        </div> -->
+      </div>
+    </p-header>
+    <ng-template
+      let-product
+      pTemplate="listItem"
+    >
+      <div class="p-col-12">
+        <div class="product-list-item">
+          <div class="product-list-detail">
+            <div class="product-name">{{product.name}}</div>
+            <div class="product-description">{{product.policyNumber}}
+              <br> {{product.plan}} {{product.mode}}
+            </div>
+            <i class="pi pi-calendar product-category-icon"></i><span class="product-category">{{product.doc}}</span>
+          </div>
+          <div class="product-list-action">
+            <span class="product-price">{{product.sumAssured}}</span>
+            <span class="product-badge">{{product.premium}}</span>
+            <button
+              mat-icon-button
+              (click)="onClick(product)"
+              style="font-size: 2rem"
+            ><i class="fa fa-whatsapp product-category-icon"></i></button>
+          </div>
+        </div>
+        <hr>
+      </div>
+    </ng-template>
+  </p-dataView>
+</div>
+<mat-progress-spinner
+  class="c-loading-shade"
+  *ngIf="loading"
+  mode="indeterminate"
+></mat-progress-spinner>
