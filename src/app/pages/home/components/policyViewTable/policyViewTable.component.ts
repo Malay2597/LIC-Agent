@@ -29,10 +29,15 @@ export class PolicyViewTableComponent implements OnInit {
 
   ngOnInit() {
     this.loading = true;
-    this.licApiService.getPolicyListByType(this.type).subscribe(res => {
-      this.policyHolder = res;
-      this.loading = false;
-    });
+    // this.licApiService.getPolicyListByType(this.type).subscribe(res => {
+    //   this.policyHolder = res;
+    //   console.log('XX', this.policyHolder);
+    //   this.loading = false;
+    // });
+    this.policyHolder = this.licApiService.getPolicyListByType(this.type);
+    setTimeout(() => {
+      this.loading = false
+    }, 1000);
   }
 
   onClick(value: PolicyHolder) {

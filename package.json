@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "start-pwa": "ng build --prod && http-server -p 8000 -c-1 dist/angular-pwa",
+    "start-pwa": "ng build --prod && http-server -p 8000 -c-1 dist/Lic-App",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
