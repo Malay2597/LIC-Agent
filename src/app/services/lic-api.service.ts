@@ -4551,7 +4551,6 @@ export class LicApiService {
                 result.push(obj);
               }
             });
-          console.log("Ress", result);
           return result;
   }
 
@@ -4592,19 +4591,27 @@ export class LicApiService {
   return mappedValue;
 }
 
-  getDueList(month = 1): Observable<PolicyHolder[]> {
+  getDueList(month = 1) {
     let params = new HttpParams();
-    params = params.append('month', month.toString());
-    return this.http
-      .get(`${this.apiUrl}due-list`, { params })
-      .pipe(map((res: object[]) => {
-        const result: PolicyHolder[] = [];
-        res.forEach(el => {
-          const obj = new PolicyHolder(el);
-          result.push(obj);
+    // params = params.append('month', month.toString());
+    // return this.http
+    //   .get(`${this.apiUrl}due-list`, { params })
+    //   .pipe(map((res: object[]) => {
+    //     const result: PolicyHolder[] = [];
+    //     res.forEach(el => {
+    //       const obj = new PolicyHolder(el);
+    //       result.push(obj);
+    //     });
+    //     return result;
+    //   }), catchError(this.handleError));
+    const result: PolicyHolder[] = [];
+        response.policyHoldersInfo.forEach(el => {
+          if(el.DueMonth.includes(month)){
+            const obj = new PolicyHolder(el);
+            result.push(obj);
+          }
         });
         return result;
-      }), catchError(this.handleError));
   }
 
 
