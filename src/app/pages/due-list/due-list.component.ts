@@ -35,10 +35,10 @@ export class DueListComponent implements OnInit {
 
   getDueList(month: number) {
     this.loading = true;
-    this.licApiService.getDueList(month).subscribe(res => {
-      this.dueList = res;
+    this.dueList = this.licApiService.getDueList(month);
+    setTimeout(() => {
       this.loading = false;
-    });
+    }, 1000);
   }
 
   onClick(value: PolicyHolder) {
