@@ -153,20 +153,6 @@ const response = {
           "Status": "In Force"
         },
     {
-      "DueMonth": [2],
-      "_id": "64253d1eb44ecf7b07f7af4c",
-      "PolicyNumber": 932635249,
-      "Name": "Vivan Tarunbhai Shah",
-      "DOC": "24-02-2023",
-      "Prem": "₹ 23,553",
-      "Mode": "YLY",
-      "FUP": "24-02-2024",
-      "Plan": 934,
-      "Term": 23,
-      "SumAssured": "₹ 5,00,000",
-      "Status": "In Force"
-    },
-    {
       "DueMonth": [10],
       "_id": "64253d0cb44ecf7b07f7af4b",
       "PolicyNumber": 932633598,
