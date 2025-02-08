@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1714207687365,
+  "timestamp": 1739012821124,
   "index": "https://malay2597.github.io/LIC-Agent/index.html",
   "assetGroups": [
     {
@@ -8,17 +8,17 @@
       "installMode": "prefetch",
       "updateMode": "prefetch",
       "urls": [
-        "https://malay2597.github.io/LIC-Agent/5-es2015.658bb5c32fcd07e24fbf.js",
-        "https://malay2597.github.io/LIC-Agent/5-es5.658bb5c32fcd07e24fbf.js",
+        "https://malay2597.github.io/LIC-Agent/5-es2015.66d14d603fb066297e81.js",
+        "https://malay2597.github.io/LIC-Agent/5-es5.66d14d603fb066297e81.js",
         "https://malay2597.github.io/LIC-Agent/favicon.ico",
         "https://malay2597.github.io/LIC-Agent/index.html",
-        "https://malay2597.github.io/LIC-Agent/main-es2015.3f8d8d01d0954cb0145a.js",
-        "https://malay2597.github.io/LIC-Agent/main-es5.3f8d8d01d0954cb0145a.js",
+        "https://malay2597.github.io/LIC-Agent/main-es2015.4c5cd7af8e3c66ac5f40.js",
+        "https://malay2597.github.io/LIC-Agent/main-es5.4c5cd7af8e3c66ac5f40.js",
         "https://malay2597.github.io/LIC-Agent/manifest.webmanifest",
         "https://malay2597.github.io/LIC-Agent/polyfills-es2015.7d48e6b26d37d7ca52a8.js",
         "https://malay2597.github.io/LIC-Agent/polyfills-es5.82ce86300cad4d2e0def.js",
-        "https://malay2597.github.io/LIC-Agent/runtime-es2015.c50f5129517cadb2c680.js",
-        "https://malay2597.github.io/LIC-Agent/runtime-es5.c50f5129517cadb2c680.js",
+        "https://malay2597.github.io/LIC-Agent/runtime-es2015.048f4ca00011e8610ec0.js",
+        "https://malay2597.github.io/LIC-Agent/runtime-es5.048f4ca00011e8610ec0.js",
         "https://malay2597.github.io/LIC-Agent/styles.80eeaac370e26cc2a95d.css"
       ],
       "patterns": []
@@ -36,6 +36,7 @@
         "https://malay2597.github.io/LIC-Agent/assets/icons/icon-512x512.png",
         "https://malay2597.github.io/LIC-Agent/assets/icons/icon-72x72.png",
         "https://malay2597.github.io/LIC-Agent/assets/icons/icon-96x96.png",
+        "https://malay2597.github.io/LIC-Agent/assets/policyList.ts",
         "https://malay2597.github.io/LIC-Agent/color.c7a33805ffda0d32bd2a.png",
         "https://malay2597.github.io/LIC-Agent/hue.0614c27197fc3ce572e1.png",
         "https://malay2597.github.io/LIC-Agent/line.567f57385ea3dde2c9ae.gif",
@@ -77,8 +78,8 @@
     }
   ],
   "hashTable": {
-    "https://malay2597.github.io/LIC-Agent/5-es2015.658bb5c32fcd07e24fbf.js": "824eefe3c4ca6ae5d70e4c0537df4ce9fe213b93",
-    "https://malay2597.github.io/LIC-Agent/5-es5.658bb5c32fcd07e24fbf.js": "910638d9d30241e3f0f472f231561ea245046404",
+    "https://malay2597.github.io/LIC-Agent/5-es2015.66d14d603fb066297e81.js": "a0b2865fea0b7a7f638ec9b35d24cb5275ed147a",
+    "https://malay2597.github.io/LIC-Agent/5-es5.66d14d603fb066297e81.js": "d474a7e75669b935e207f47a93853f25fc056063",
     "https://malay2597.github.io/LIC-Agent/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
     "https://malay2597.github.io/LIC-Agent/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
     "https://malay2597.github.io/LIC-Agent/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
@@ -87,14 +88,15 @@
     "https://malay2597.github.io/LIC-Agent/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
     "https://malay2597.github.io/LIC-Agent/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
     "https://malay2597.github.io/LIC-Agent/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "https://malay2597.github.io/LIC-Agent/assets/policyList.ts": "2cf84e992a417663c011cecae7820b0f32dceb18",
     "https://malay2597.github.io/LIC-Agent/color.c7a33805ffda0d32bd2a.png": "ff4c4bcb2207891b292f544edb4da9d2df5d45cf",
     "https://malay2597.github.io/LIC-Agent/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
     "https://malay2597.github.io/LIC-Agent/hue.0614c27197fc3ce572e1.png": "f81ae627637a684614aa726e206c73ce099a01fd",
-    "https://malay2597.github.io/LIC-Agent/index.html": "5e693b4673d75aebd024790bce217ea34274400c",
+    "https://malay2597.github.io/LIC-Agent/index.html": "cb5b2e65a495ff8a80b1090b20a3f273be663797",
     "https://malay2597.github.io/LIC-Agent/line.567f57385ea3dde2c9ae.gif": "a2af20bd160ca9cfc2c85527663ff7429267519a",
     "https://malay2597.github.io/LIC-Agent/loading.8732a6660b528fadfaeb.gif": "72998a116936156dc7cace0606dab499fe4f3ce8",
-    "https://malay2597.github.io/LIC-Agent/main-es2015.3f8d8d01d0954cb0145a.js": "3d8e7f589561d7c4c163733e1351e77cb130fd54",
-    "https://malay2597.github.io/LIC-Agent/main-es5.3f8d8d01d0954cb0145a.js": "1a43d58dcfb4c8467938c93b2276e212cd42900b",
+    "https://malay2597.github.io/LIC-Agent/main-es2015.4c5cd7af8e3c66ac5f40.js": "b26a247f3ffc78231c3314bb0e6a76dc58b5abea",
+    "https://malay2597.github.io/LIC-Agent/main-es5.4c5cd7af8e3c66ac5f40.js": "216dacd9aee9c9a3d0c43900fb9f60e836df9fd7",
     "https://malay2597.github.io/LIC-Agent/manifest.webmanifest": "0a368cecb0caf56fce3991a3e6b6394d777a2a51",
     "https://malay2597.github.io/LIC-Agent/open-sans-v15-latin-300.177cc92d2e8027712a8c.ttf": "861b3593521709d9fa8a8efb6f40817dd7fa9337",
     "https://malay2597.github.io/LIC-Agent/open-sans-v15-latin-300.27ef0b062b2e221df16f.svg": "1183c2939f6cad1ac69dc16d4a0b943d546e4b2e",
@@ -118,8 +120,8 @@
     "https://malay2597.github.io/LIC-Agent/primeicons.25954ab5e32c01d577dc.svg": "4a2c5258656a8b900ddeabf5ac62aace724f5a0d",
     "https://malay2597.github.io/LIC-Agent/primeicons.3b6e3706f42d8876fe36.woff": "d65c561bf2d7b6707c3912d8987273a9c715b7f2",
     "https://malay2597.github.io/LIC-Agent/primeicons.b0f5d02f4e70967dcc81.eot": "6441e65a2458d0c813cd2bf6e8648c1f54327bdb",
-    "https://malay2597.github.io/LIC-Agent/runtime-es2015.c50f5129517cadb2c680.js": "45535a2241d85e639f45ac1969f816b0bbb5aaef",
-    "https://malay2597.github.io/LIC-Agent/runtime-es5.c50f5129517cadb2c680.js": "56dcb1145b4d16077177708b9ae73632d323ef4e",
+    "https://malay2597.github.io/LIC-Agent/runtime-es2015.048f4ca00011e8610ec0.js": "3c1942ddfc7a2425a14e26313c89b28150f0708b",
+    "https://malay2597.github.io/LIC-Agent/runtime-es5.048f4ca00011e8610ec0.js": "05f5eea447cfbcc6cacd1d64d3843314d23a02d9",
     "https://malay2597.github.io/LIC-Agent/styles.80eeaac370e26cc2a95d.css": "f9833a9289eb925cbee407a5ecbd66f01f7605b0"
   },
   "navigationUrls": [

@@ -12,6 +12,7 @@ export class PolicyHolder {
     this.status = obj.Status;
     this.fup = obj.FUP;
     this.premiumPaid = false;
+    this.mobile = obj.Mobile;
   }
   dueMonth: Array<number>;
   id: string;
@@ -25,4 +26,5 @@ export class PolicyHolder {
   status: string;
   fup: string;
   premiumPaid: boolean;
+  mobile: number
 }

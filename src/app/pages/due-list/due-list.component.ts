@@ -43,8 +43,11 @@ export class DueListComponent implements OnInit {
 
   onClick(value: PolicyHolder) {
     const obj = `PolicyNo:${value.policyNumber}%0ADoc : ${value.doc}%0APrem : ${value.premium}`;
-    this.url = `https://api.whatsapp.com/send?phone=919662208847&text=${obj}`;
-    window.location.href = this.url;
+    console.log('MOB', value.mobile);
+    if(value.mobile && String(value.mobile)!=='N'){
+      this.url = `https://api.whatsapp.com/send?phone=91${value.mobile}&text=${obj}`;
+      window.location.href = this.url;
+    }
   }
 
   onPay(value: PolicyHolder) {
