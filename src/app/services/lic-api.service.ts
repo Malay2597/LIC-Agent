@@ -4151,6 +4151,39 @@ export class LicApiService {
   // apiUrl = 'http://localhost:5000/';
   apiUrl = 'http://54.170.66.55/api/';
 
+  private parseDocMonth(doc: string): number | null {
+    if (!doc) return null;
+    const parts = doc.split('/');
+    if (parts.length < 2) return null;
+    const month = parseInt(parts[1], 10);
+    return Number.isNaN(month) ? null : month;
+  }
+
+  private computeDueMonths(doc: string, mode: string): number[] {
+    const docMonth = this.parseDocMonth(doc);
+    if (!docMonth) {
+      return [];
+    }
+
+    const wrap = (m: number) => ((m - 1) % 12) + 1;
+
+    switch (mode) {
+      case 'YLY':
+        return [docMonth];
+      case 'HLY':
+        return [docMonth, wrap(docMonth + 6)];
+      case 'QLY':
+        return [
+          docMonth,
+          wrap(docMonth + 3),
+          wrap(docMonth + 6),
+          wrap(docMonth + 9),
+        ];
+      default:
+        return [];
+    }
+  }
+
   getPolicyDetails(pageNumber = 1, pageSize: number): Observable<PolicyHolder[]> {
     let params = new HttpParams();
     params = params.append('pageNumber', pageNumber.toString());
@@ -4160,7 +4193,11 @@ export class LicApiService {
       .pipe(map((res: PolicyDetails) => {
         const result: PolicyHolder[] = [];
         res.policyHoldersInfo.forEach(el => {
-          const obj = new PolicyHolder(el);
+          const normalized = {
+            ...el,
+            DueMonth: this.computeDueMonths(el.doc, el.mode),
+          };
+          const obj = new PolicyHolder(normalized);
           result.push(obj);
         });
         return result;
@@ -4188,7 +4225,11 @@ export class LicApiService {
 
             const result: PolicyHolder[] = [];
             policyHolders.forEach(res => {
-              const obj = new PolicyHolder(res);
+              const normalized = {
+                ...res,
+                DueMonth: this.computeDueMonths(res.DOC, res.Mode),
+              };
+              const obj = new PolicyHolder(normalized);
               if (obj.status === policyType) {
                 result.push(obj);
               }
@@ -4249,8 +4290,13 @@ export class LicApiService {
 
     const result: PolicyHolder[] = [];
         policyHolders.forEach(el => {
-          if(el.DueMonth.includes(month)){
-            const obj = new PolicyHolder(el);
+          const dueMonths = this.computeDueMonths(el.DOC, el.Mode);
+          if (dueMonths.includes(month)) {
+            const normalized = {
+              ...el,
+              DueMonth: dueMonths,
+            };
+            const obj = new PolicyHolder(normalized);
             result.push(obj);
           }
         });
